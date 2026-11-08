@@ -1,20 +1,41 @@
-import { Geist, Geist_Mono, Instrument_Serif, Inter_Tight, Plus_Jakarta_Sans, Figtree, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 
-export const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
-export const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
-export const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument", display: "swap" });
-export const interTight = Inter_Tight({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-inter-tight", display: "swap" });
+/*
+ * All fonts are self-hosted from ./font-files (latin subset, variable where available).
+ * next/font/google fails intermittently on Vercel builds, so nothing is fetched at build time.
+ */
 
-/* Project typefaces — only used by the case-study type specimens. */
-export const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-jakarta", preload: false });
-export const figtree = Figtree({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-figtree", preload: false });
-export const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-roboto", preload: false });
-import { Kodchasan, Fredoka, DM_Mono, Instrument_Sans, Jost, Cormorant_Garamond, Manrope } from "next/font/google";
-export const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["300", "400", "500"], style: ["normal", "italic"], variable: "--font-cormorant", preload: false });
-export const manrope = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-manrope", preload: false });
-export const kodchasan = Kodchasan({ subsets: ["latin"], weight: "700", variable: "--font-kodchasan", preload: false });
-export const fredoka = Fredoka({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-fredoka", preload: false });
-export const dmMono = DM_Mono({ subsets: ["latin"], weight: "400", variable: "--font-dm-mono", preload: false });
-export const instrumentSans = Instrument_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-instrument-sans", preload: false });
-export const jost = Jost({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jost", preload: false });
-export const projectFonts = [jakarta, figtree, roboto, kodchasan, fredoka, dmMono, instrumentSans, jost, cormorant, manrope].map((f) => f.variable).join(" ");
+export const geist = localFont({ src: [{ path: "./font-files/geist-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-geist", display: "swap" });
+export const geistMono = localFont({ src: [{ path: "./font-files/geist-mono-normal.woff2", weight: "400 500", style: "normal" }], variable: "--font-geist-mono", display: "swap" });
+export const instrument = localFont({
+  src: [
+    { path: "./font-files/instrument-serif-normal.woff2", weight: "400", style: "normal" },
+    { path: "./font-files/instrument-serif-italic.woff2", weight: "400", style: "italic" },
+  ],
+  variable: "--font-instrument",
+  display: "swap",
+});
+export const interTight = localFont({ src: [{ path: "./font-files/inter-tight-normal.woff2", weight: "500 700", style: "normal" }], variable: "--font-inter-tight", display: "swap" });
+
+/* Project typefaces — used by the project windows (specimens and wordmarks). */
+export const jakarta = localFont({ src: [{ path: "./font-files/jakarta-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-jakarta", preload: false });
+export const figtree = localFont({ src: [{ path: "./font-files/figtree-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-figtree", preload: false });
+export const roboto = localFont({ src: [{ path: "./font-files/roboto-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-roboto", preload: false });
+export const kodchasan = localFont({ src: [{ path: "./font-files/kodchasan-normal.woff2", weight: "700", style: "normal" }], variable: "--font-kodchasan", preload: false });
+export const fredoka = localFont({ src: [{ path: "./font-files/fredoka-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-fredoka", preload: false });
+export const dmMono = localFont({ src: [{ path: "./font-files/dm-mono-normal.woff2", weight: "400", style: "normal" }], variable: "--font-dm-mono", preload: false });
+export const instrumentSans = localFont({ src: [{ path: "./font-files/instrument-sans-normal.woff2", weight: "400 600", style: "normal" }], variable: "--font-instrument-sans", preload: false });
+export const jost = localFont({ src: [{ path: "./font-files/jost-normal.woff2", weight: "400 500", style: "normal" }], variable: "--font-jost", preload: false });
+export const cormorant = localFont({
+  src: [
+    { path: "./font-files/cormorant-latin.woff2", weight: "300 500", style: "normal" },
+    { path: "./font-files/cormorant-latin-italic.woff2", weight: "300 500", style: "italic" },
+  ],
+  variable: "--font-cormorant",
+  preload: false,
+});
+export const manrope = localFont({ src: [{ path: "./font-files/manrope-latin.woff2", weight: "400 600", style: "normal" }], variable: "--font-manrope", preload: false });
+
+export const projectFonts = [jakarta, figtree, roboto, kodchasan, fredoka, dmMono, instrumentSans, jost, cormorant, manrope]
+  .map((f) => f.variable)
+  .join(" ");
