@@ -80,6 +80,18 @@ export const portal: Record<string, PortalExtra> = {
       { family: "Instrument Serif", varName: "--font-instrument", use: "Editorial accents" },
     ],
   },
+  folat: {
+    icon: { text: "f", bg: "linear-gradient(150deg,#2a2a2e,#0e0e10)", fg: "#e8bf55" },
+    wordmark: { text: "Folat", font: "--font-system", weight: 700 },
+    banner: "/work/folat/cover.jpg",
+    screens: phone("folat", [
+      ["login", "Sign in"], ["home", "Home"], ["customers", "Customers"], ["customer", "Customer"],
+      ["record-payment", "Record payment"], ["owing", "Follow up"], ["today", "Payments"], ["report", "Report"],
+      ["distribution", "Distribution day"], ["add-customer", "New customer"], ["settings", "Settings"],
+    ]),
+    proportions: P.folat,
+    screensCaption: "Captured from the app at phone size, filled with made-up customers. Scroll sideways, click to enlarge.",
+  },
   mealio: {
     icon: { text: "m", bg: "linear-gradient(150deg,#3ad374,#14b74d)", fg: "#fff" },
     wordmark: { text: "mealio", font: "--font-roboto", weight: 700 },

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   images: { formats: ["image/avif", "image/webp"] },
   // case studies now open in a window on /work — keep old links working
   async redirects() {
-    return [{ source: "/work/:slug(duba|shoppa|mealio|picta|duba-website|morenikeji|adunni|dearly)", destination: "/work#:slug", permanent: false }];
+    return [{ source: "/work/:slug(duba|shoppa|mealio|picta|duba-website|morenikeji|adunni|dearly|folat)", destination: "/work#:slug", permanent: false }];
   },
 };
 

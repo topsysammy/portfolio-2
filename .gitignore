@@ -6,3 +6,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# drop-folder instructions (not deployed)
+public/**/README.md

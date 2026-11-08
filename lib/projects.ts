@@ -55,6 +55,8 @@ export type Project = {
   blocks?: Block[];
   palette?: Swatch[];
   font?: { family: string; varName: string; weights: number[]; note: string; sample: string };
+  /** Demo video. Shown only once the file exists in /public (checked at build time). */
+  video?: { src: string; poster?: string; caption?: string };
 };
 
 export const projects: Project[] = [
@@ -555,6 +557,74 @@ export const projects: Project[] = [
       weights: [400],
       note: "The hand-drawn UI face for titles, buttons and navigation. DM Sans carries body copy, and letters themselves can be set in ten handwriting fonts.",
       sample: "Some things are better written.",
+    },
+  },
+  {
+    slug: "folat",
+    title: "Folat",
+    year: "2026",
+    kind: "case",
+    label: "Application",
+    summary:
+      "A savings book for people who run December food savings: record every customer's payment, see who is behind, send statements on WhatsApp and run distribution day.",
+    tags: ["Fintech", "Web App", "Vibecoded"],
+    cover: "/work/folat/cover.jpg",
+    coverAlt: "Folat savings app screens",
+    live: "https://folat-theta.vercel.app",
+    page: true,
+    video: { src: "/work/folat/demo/demo.mp4", caption: "A walk through Folat: recording a payment, following up and sending a statement." },
+    meta: [
+      { k: "Role", v: "Designer & Builder" },
+      { k: "Year", v: "2026" },
+      { k: "Technology", v: "React, Vite, TypeScript, Supabase, WhatsApp Cloud API" },
+      { k: "Status", v: "Live" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "Folat started as a savings book for my mum's December food savings: customers pay daily, weekly or monthly, and in December everyone collects what they saved. It replaced a notebook and a WhatsApp bot, and now anyone running a savings scheme can open an account.",
+      },
+      {
+        type: "changes",
+        eyebrow: "what i designed",
+        title: "And why it works for Folat",
+        items: [
+          { what: "Every customer's page leads with what they have paid, how far behind they are, and one Record payment button.", why: "The question she hears most, how much have I paid, is answered at a glance." },
+          { what: "Statements are sent as a WhatsApp message from her own number, already typed out.", why: "No bot fees, and customers hear from someone they trust." },
+          { what: "Follow up splits customers who are behind from those who have stopped paying, each with a Remind button.", why: "She chases the right people first." },
+          { what: "Distribution day has its own screen: tick off each customer as they collect their food.", why: "The December hand-out stays organised, even on a busy day." },
+          { what: "Money, “behind by” and the CSV report run on the same code as the WhatsApp bot.", why: "The app and the bot never disagree on a number." },
+          { what: "It installs from the browser to the home screen and stays signed in.", why: "It opens like an app, with no app store." },
+        ],
+      },
+      {
+        type: "timeline",
+        eyebrow: "how i built it",
+        title: "Built with AI",
+        steps: workflow.map((w, i) => ({ when: `Step 0${i + 1}`, title: w.title, text: w.text })),
+      },
+    ],
+    palette: [
+      { name: "Paper", hex: "#FFFFFF" },
+      { name: "Mist", hex: "#F3F3F1" },
+      { name: "Pill", hex: "#F5F5F3" },
+      { name: "Line", hex: "#ECECE8" },
+      { name: "Sand", hex: "#E9DFC8" },
+      { name: "Gold", hex: "#E8BF55" },
+      { name: "Good", hex: "#1F9D55" },
+      { name: "Good tint", hex: "#E3F3EA" },
+      { name: "Bad", hex: "#D93B3B" },
+      { name: "Bad tint", hex: "#FBEAEA" },
+      { name: "Muted", hex: "#8A8A90" },
+      { name: "Ink", hex: "#0E0E10" },
+    ],
+    font: {
+      family: "System UI (SF Pro)",
+      varName: "--font-system",
+      weights: [400, 500, 600, 700],
+      note: "The phone's own typeface, with tabular numbers so every naira lines up in a column.",
+      sample: "₦525,000 collected",
     },
   },
   {

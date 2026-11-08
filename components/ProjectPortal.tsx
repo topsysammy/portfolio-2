@@ -7,6 +7,7 @@ import { profile } from "@/lib/data";
 import { Palette, TypeSpecimen } from "./Specimens";
 import Lightbox, { type Shot } from "./Lightbox";
 import { copyText } from "./CopyEmail";
+import { useHasVideo } from "./MediaContext";
 
 const cap = (s: string) => (s.charAt(0).toUpperCase() + s.slice(1)).replace(/\bi\b/g, "I");
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -142,6 +143,7 @@ function BlockView({ b, open }: { b: Block; open: (src: string) => void }) {
 function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNext: () => void }) {
   const x = portal[p.slug];
   const next = nextProject(p.slug);
+  const video = useHasVideo(p.slug) ? p.video : undefined;
   const blocks = useMemo(() => p.blocks ?? [], [p.blocks]);
   const story = blocks.filter((b) => b.type !== "figure");
   const figures = blocks.filter((b): b is Extract<Block, { type: "figure" }> => b.type === "figure");
@@ -154,6 +156,7 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
 
   const secs = useMemo(() => {
     const s: [string, string][] = [["intro", "Introduction"]];
+    if (video) s.push(["demo", "Demo"]);
     story.forEach((b) => b.type !== "lead" && s.push([slug(b.eyebrow), cap(b.eyebrow)]));
     if (figures.length) s.push(["design", "The design"]);
     if (x.screens.length) s.push(["screens", "Screens"]);
@@ -161,7 +164,7 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
     if (p.font) s.push(["type", "Type system"]);
     s.push(["about", "About"]);
     return s;
-  }, [story, figures.length, x.screens.length, p.palette, p.font]);
+  }, [story, figures.length, x.screens.length, p.palette, p.font, video]);
   const [on, setOn] = useState(secs[0][0]);
 
   const shots: Shot[] = useMemo(
@@ -295,6 +298,12 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
                 </span>
               </figure>
             </Sec>
+
+            {video && (
+              <Sec id="demo" title="Demo" caption={video.caption}>
+                <video className="pdemo" src={video.src} poster={video.poster ?? p.cover} controls autoPlay muted loop playsInline preload="metadata" />
+              </Sec>
+            )}
 
             {story.filter((b) => b.type !== "lead").map((b) => (
               <Sec key={b.eyebrow} id={slug(b.eyebrow)} title={cap(b.eyebrow)} actions={"title" in b && b.type !== "challenge" ? <span className="label">{b.title}</span> : undefined}>

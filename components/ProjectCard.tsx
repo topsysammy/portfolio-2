@@ -1,12 +1,30 @@
+"use client";
 import Image from "next/image";
 import { projectHref, type Project } from "@/lib/projects";
+import { useHasVideo } from "./MediaContext";
 
 export default function ProjectCard({ p, i = 0, priority = false }: { p: Project; i?: number; priority?: boolean }) {
   const href = projectHref(p);
+  const video = useHasVideo(p.slug) ? p.video : undefined;
   const inner = (
     <>
       <div className="thumb">
-        <Image src={p.cover} alt={p.coverAlt} fill sizes="(max-width: 720px) 100vw, 50vw" priority={priority} />
+        {video ? (
+          <video
+            className="thumb-video"
+            src={video.src}
+            poster={video.poster ?? p.cover}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={`${p.title} demo`}
+          />
+        ) : (
+          <Image src={p.cover} alt={p.coverAlt} fill sizes="(max-width: 720px) 100vw, 50vw" priority={priority} />
+        )}
+        {video && <span className="badge">▶ Demo</span>}
       </div>
       <div className="meta">
         <div>

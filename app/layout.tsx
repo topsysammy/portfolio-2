@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { geist, geistMono, instrument, interTight, projectFonts } from "@/lib/fonts";
 import ProjectPortal from "@/components/ProjectPortal";
+import { MediaProvider } from "@/components/MediaContext";
+import { presentVideos } from "@/lib/media";
 import Nav from "@/components/Nav";
 import Loader from "@/components/Loader";
 import Toast from "@/components/Toast";
@@ -36,8 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">Skip to content</a>
         <Loader />
         <Nav />
-        {children}
-        <ProjectPortal />
+        <MediaProvider videos={presentVideos()}>
+          {children}
+          <ProjectPortal />
+        </MediaProvider>
         <Toast />
       </body>
     </html>
