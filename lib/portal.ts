@@ -67,6 +67,18 @@ export const portal: Record<string, PortalExtra> = {
     proportions: P.saaspro,
     screensCaption: "Exported from the Figma file: all ten dashboard screens. Scroll sideways, click to enlarge.",
   },
+  "saaspro-website": {
+    icon: { text: "s", bg: "linear-gradient(150deg,#4a86ff,#2a5fd6)", fg: "#ffffff" },
+    wordmark: { text: "SaasPro", font: "--font-system", weight: 700 },
+    banner: "/work/saaspro-website/cover.jpg",
+    dark: true,
+    screens: web("saaspro-website", [
+      "Home · hero", "Home · features", "Home · three steps", "Home · pricing", "Home · FAQ",
+      "Features · hero", "Features · at a glance", "Pricing · plans", "Pricing · questions", "Contact",
+    ]),
+    proportions: P["saaspro-website"],
+    screensCaption: "Exported from the Figma file. Scroll sideways, click to enlarge.",
+  },
   "duba-website": {
     icon: { text: "d", bg: "linear-gradient(150deg,#ff7a2e,#ff5c02)", fg: "#fff" },
     wordmark: { text: "DUBA", font: "--font-kodchasan", weight: 700 },
