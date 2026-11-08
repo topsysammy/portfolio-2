@@ -1,10 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
 import { projectHref, type Project } from "@/lib/projects";
 
 export default function ProjectCard({ p, i = 0, priority = false }: { p: Project; i?: number; priority?: boolean }) {
   const href = projectHref(p);
-  const external = !p.page;
   const inner = (
     <>
       <div className="thumb">
@@ -16,14 +14,12 @@ export default function ProjectCard({ p, i = 0, priority = false }: { p: Project
           <p className="sub">{p.summary}</p>
           <div className="tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
         </div>
-        <span className="arrow" aria-hidden="true">{external ? "↗" : "→"}</span>
+        <span className="arrow" aria-hidden="true">→</span>
       </div>
     </>
   );
   const style = { "--i": i } as React.CSSProperties;
-  return external ? (
-    <a className="card" href={href} target="_blank" rel="noreferrer" style={style}>{inner}</a>
-  ) : (
-    <Link className="card" href={href} style={style}>{inner}</Link>
+  return (
+    <a className="card" href={href} style={style} aria-label={`Open ${p.title}`}>{inner}</a>
   );
 }

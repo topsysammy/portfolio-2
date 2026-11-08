@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { geist, geistMono, instrument, interTight } from "@/lib/fonts";
+import { geist, geistMono, instrument, interTight, projectFonts } from "@/lib/fonts";
+import ProjectPortal from "@/components/ProjectPortal";
 import Nav from "@/components/Nav";
 import Loader from "@/components/Loader";
 import Toast from "@/components/Toast";
@@ -22,7 +23,7 @@ export const viewport: Viewport = { themeColor: "#ffffff", viewportFit: "cover" 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${instrument.variable} ${interTight.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${instrument.variable} ${interTight.variable} ${projectFonts}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Loader />
         <Nav />
         {children}
+        <ProjectPortal />
         <Toast />
       </body>
     </html>

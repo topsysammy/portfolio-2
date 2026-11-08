@@ -384,7 +384,38 @@ export const projects: Project[] = [
     cover: "/work/duba-website.jpg",
     coverAlt: "DUBA marketing website",
     live: "https://duba-landing.vercel.app/",
-    page: false,
+    page: true,
+    meta: [
+      { k: "Role", v: "Web design & build" },
+      { k: "Year", v: "2026" },
+      { k: "Platform", v: "Web · landing page" },
+      { k: "Status", v: "Live" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "Marketing site for DUBA explaining its top-ups and virtual card on one page.",
+      },
+    ],
+    palette: [
+      { name: "Ink", hex: "#080808" },
+      { name: "Surface", hex: "#0D0D0D" },
+      { name: "Canvas", hex: "#F5F5F5" },
+      { name: "Paper", hex: "#FFFFFF" },
+      { name: "Internet tint", hex: "#F4F3FD" },
+      { name: "Electricity tint", hex: "#F1F6F3" },
+      { name: "Betting tint", hex: "#FCF9EE" },
+      { name: "Electricity", hex: "#114F38" },
+      { name: "Alert", hex: "#FF5C02" },
+    ],
+    font: {
+      family: "Plus Jakarta Sans",
+      varName: "--font-jakarta",
+      weights: [400, 500, 600, 700],
+      note: "The same UI typeface as the app, so the site and the product read as one brand. Kodchasan Bold is kept for the wordmark.",
+      sample: "Pay every bill from one place",
+    },
   },
   {
     slug: "mealio",
@@ -599,6 +630,22 @@ export const projects: Project[] = [
         steps: workflow.map((w, i) => ({ when: `Step 0${i + 1}`, title: w.title, text: w.text })),
       },
     ],
+    palette: [
+      { name: "Paper", hex: "#FBFAF6" },
+      { name: "Cream", hex: "#FFF8EC" },
+      { name: "Slate", hex: "#2B3A4A" },
+      { name: "Mist", hex: "#8B9AA8" },
+      { name: "Tape yellow", hex: "#FFC531" },
+      { name: "Draws coral", hex: "#FF5C63" },
+      { name: "Guesses mint", hex: "#22D3A0" },
+    ],
+    font: {
+      family: "Fredoka",
+      varName: "--font-fredoka",
+      weights: [400, 500, 600, 700],
+      note: "Fredoka for the logo and headings, DM Mono for the small spaced-out labels.",
+      sample: "draw it, pass it, guess it",
+    },
   },
   {
     slug: "morenikeji",
@@ -612,17 +659,47 @@ export const projects: Project[] = [
     cover: "/work/morenikeji-website.jpg",
     coverAlt: "Morenikeji Collections online store",
     live: "https://morenikejicollections.netlify.app/",
-    page: false,
+    page: true,
+    meta: [
+      { k: "Role", v: "Web design & build" },
+      { k: "Year", v: "2026" },
+      { k: "Platform", v: "Web · online store" },
+      { k: "Status", v: "Live" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "An online store for the Nigerian market with delivery across Nigeria and card, transfer or USSD payment.",
+      },
+    ],
+    palette: [
+      { name: "Ground", hex: "#F7F8F5" },
+      { name: "Mint", hex: "#E6EEE8" },
+      { name: "Sand", hex: "#EFE8D8" },
+      { name: "Paper", hex: "#FFFFFF" },
+      { name: "Lime", hex: "#8BEF5A" },
+      { name: "Navy", hex: "#071A2B" },
+      { name: "Ink", hex: "#101828" },
+      { name: "Slate", hex: "#667085" },
+    ],
+    font: {
+      family: "Instrument Sans",
+      varName: "--font-instrument-sans",
+      weights: [400, 500, 600],
+      note: "Instrument Sans for the interface and product copy, Jost for the wordmark.",
+      sample: "Your Style Starts Here.",
+    },
   },
 ];
 
 export const caseStudies = projects.filter((p) => p.page);
 
 export function projectHref(p: Project) {
-  return p.page ? `/work/${p.slug}` : p.live ?? p.behance ?? "#";
+  return `#${p.slug}`;
 }
 
 export function nextProject(slug: string) {
-  const i = caseStudies.findIndex((p) => p.slug === slug);
-  return caseStudies[(i + 1) % caseStudies.length];
+  const i = projects.findIndex((p) => p.slug === slug);
+  return projects[(i + 1) % projects.length];
 }
