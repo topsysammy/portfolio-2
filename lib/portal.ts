@@ -56,6 +56,18 @@ export const portal: Record<string, PortalExtra> = {
     screensCaption: "Exported from the Figma file: desktop first, then mobile. Scroll sideways, click to enlarge.",
     extraFonts: [{ family: "Manrope", varName: "--font-manrope", use: "Body, labels & buttons" }],
   },
+  saaspro: {
+    icon: { text: "s", bg: "linear-gradient(150deg,#4a86ff,#2a5fd6)", fg: "#ffffff" },
+    wordmark: { text: "SaasPro", font: "--font-system", weight: 700 },
+    banner: "/work/saaspro/cover.jpg",
+    dark: true,
+    screens: web("saaspro", [
+      "Sales dashboard", "Products", "Customers", "Transactions", "Reports", "Notifications", "Profile", "Help & FAQs", "Settings", "Help Centre",
+      "Marketing · Home", "Marketing · Features", "Marketing · Pricing", "Marketing · Contact",
+    ]),
+    proportions: P.saaspro,
+    screensCaption: "Exported from the Figma file: the ten app screens, then the marketing site. Scroll sideways, click to enlarge.",
+  },
   "duba-website": {
     icon: { text: "d", bg: "linear-gradient(150deg,#ff7a2e,#ff5c02)", fg: "#fff" },
     wordmark: { text: "DUBA", font: "--font-kodchasan", weight: 700 },

@@ -1,6 +1,6 @@
 import { workflow } from "./data";
 
-export type Kind = "case" | "website" | "vibecoded";
+export type Kind = "case" | "website" | "vibecoded" | "dashboard";
 
 export type Swatch = { name: string; hex: string };
 
@@ -438,6 +438,64 @@ export const projects: Project[] = [
       note: "Display L is Light 88, H1 Regular 60, H2 Regular 44. Italics carry the second half of every headline.",
       sample: "Heritage Couture",
     },
+  },
+  {
+    slug: "saaspro",
+    title: "SaasPro",
+    year: "2026",
+    kind: "dashboard",
+    label: "Dashboard",
+    summary:
+      "A sales dashboard for online stores: revenue, orders, customers, stock and reports in one dark, data-dense workspace, plus the marketing site that sells it.",
+    tags: ["Dashboard", "SaaS", "Product Design"],
+    cover: "/work/saaspro/cover.jpg",
+    coverAlt: "SaasPro sales dashboard in a browser window",
+    page: true,
+    meta: [
+      { k: "Role", v: "Product design" },
+      { k: "Year", v: "2026" },
+      { k: "Platform", v: "Web app · desktop" },
+      { k: "Scope", v: "10 app screens, 4-page marketing site" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "SaasPro gives a store owner one place to see how the business is doing: what sold, where it sold, what is running out and who needs a reply. The marketing site sells it by showing the real product.",
+      },
+      {
+        type: "changes",
+        eyebrow: "what i designed",
+        title: "And why it works for SaasPro",
+        items: [
+          { what: "The dashboard opens with a greeting that states today's work: 50 orders delivered, 20 to send out.", why: "The first thing on screen is what needs doing next." },
+          { what: "Four KPI cards, each with a coloured edge and its change since last month.", why: "The health of the store reads in one glance." },
+          { what: "One sales chart with Sales, Orders and Customers tabs, 7D / 30D / 1Y ranges and a hover value.", why: "One chart answers many questions without opening new pages." },
+          { what: "An Insights panel flags sales spikes and low stock beside sales by country.", why: "Problems surface without digging through reports." },
+          { what: "The same sidebar and header run through all ten screens, and every table shares search, filter and export.", why: "Learn it once, use it everywhere." },
+          { what: "The marketing site uses the real dashboard in its hero, features and pricing.", why: "It shows the product instead of describing it." },
+        ],
+      },
+      { type: "figure", eyebrow: "the app", title: "Sales dashboard", image: "/work/saaspro/dashboard-full.jpg", alt: "SaasPro sales dashboard, full screen" },
+      { type: "figure", eyebrow: "the marketing site", title: "Home", image: "/work/saaspro/marketing-home.jpg", alt: "SaasPro marketing home page, full length" },
+      { type: "figure", eyebrow: "the marketing site", title: "Pricing", image: "/work/saaspro/marketing-pricing.jpg", alt: "SaasPro pricing page" },
+    ],
+    palette: [
+      { name: "Canvas", hex: "#181818" },
+      { name: "Deep", hex: "#101010" },
+      { name: "Night", hex: "#081018" },
+      { name: "Panel", hex: "#202020" },
+      { name: "Line", hex: "#303030" },
+      { name: "Muted", hex: "#A0A0A0" },
+      { name: "Text", hex: "#FFFFFF" },
+      { name: "Primary", hex: "#3878FF" },
+      { name: "Navy", hex: "#284888" },
+      { name: "Up", hex: "#02BE08" },
+      { name: "Orders", hex: "#FF8806" },
+      { name: "Down", hex: "#FF1312" },
+      { name: "Conversion", hex: "#A5C74B" },
+      { name: "Returning", hex: "#6068D2" },
+    ],
   },
   {
     slug: "duba-website",

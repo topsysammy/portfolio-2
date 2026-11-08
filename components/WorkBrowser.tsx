@@ -7,6 +7,7 @@ const filters: { label: string; kind: Kind | "all" }[] = [
   { label: "All projects", kind: "all" },
   { label: "Applications", kind: "case" },
   { label: "Websites", kind: "website" },
+  { label: "Dashboards", kind: "dashboard" },
   { label: "Vibecoded", kind: "vibecoded" },
 ];
 
