@@ -329,7 +329,7 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
                         </button>
                       ) : (
                         <button type="button" className="pscreen-phone" onClick={() => open(s.src)} aria-label={`Enlarge ${s.label}`}>
-                          <PhoneMockup src={s.src} alt={s.label} statusBar={s.statusBar} island={s.island} sizes="220px" />
+                          <PhoneMockup src={s.src} alt={s.label} statusBar={s.statusBar} island={s.island} safeBottom={s.safeBottom} sizes="220px" />
                         </button>
                       )}
                       <figcaption className="label">{s.label}</figcaption>

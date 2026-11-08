@@ -39,6 +39,9 @@ export const manrope = localFont({ src: [{ path: "./font-files/manrope-latin.wof
 export const shadowsTwo = localFont({ src: [{ path: "./font-files/shadows-two-normal.woff2", weight: "400", style: "normal" }], variable: "--font-shadows", preload: false });
 export const dmSans = localFont({ src: [{ path: "./font-files/dm-sans-normal.woff2", weight: "400 600", style: "normal" }], variable: "--font-dm-sans", preload: false });
 
-export const projectFonts = [jakarta, figtree, roboto, kodchasan, fredoka, dmMono, instrumentSans, jost, cormorant, manrope, shadowsTwo, dmSans]
+export const bagel = localFont({ src: [{ path: "./font-files/bagel-normal.woff2", weight: "400", style: "normal" }], variable: "--font-bagel", preload: false });
+export const outfit = localFont({ src: [{ path: "./font-files/outfit-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-outfit", preload: false });
+
+export const projectFonts = [jakarta, figtree, roboto, kodchasan, fredoka, dmMono, instrumentSans, jost, cormorant, manrope, shadowsTwo, dmSans, bagel, outfit]
   .map((f) => f.variable)
   .join(" ");

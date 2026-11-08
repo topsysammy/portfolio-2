@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bars from "@/lib/screen-bars.json";
 
-type Bar = { bg: string; fg: string };
+type Bar = { bg: string; fg: string; bottom?: string };
 const BARS = bars as Record<string, Bar>;
 
 /** iPhone-style mockup: titanium frame, side buttons, Dynamic Island and (for screenshots without one) a 9:41 status bar. */
@@ -10,12 +10,15 @@ export default function PhoneMockup({
   alt,
   statusBar = true,
   island = true,
+  safeBottom = false,
   sizes = "200px",
 }: {
   src: string;
   alt: string;
   statusBar?: boolean;
   island?: boolean;
+  /** keep the home-indicator strip clear (for captures whose buttons sit at the very bottom) */
+  safeBottom?: boolean;
   sizes?: string;
 }) {
   const bar = BARS[src] ?? { bg: "#ffffff", fg: "#000000" };
@@ -37,9 +40,10 @@ export default function PhoneMockup({
           </span>
         )}
         {island && <span className="iphone-island" aria-hidden="true" />}
-        <span className={`iphone-shot ${statusBar ? "has-bar" : ""}`}>
+        <span className={`iphone-shot ${statusBar ? "has-bar" : ""} ${safeBottom ? "has-safe" : ""}`}>
           <Image src={src} alt={alt} width={393} height={852} sizes={sizes} />
         </span>
+        {safeBottom && <span className="iphone-safe" style={{ background: bar.bottom ?? bar.bg }} aria-hidden="true" />}
         <span className="iphone-home" aria-hidden="true" />
       </span>
     </span>

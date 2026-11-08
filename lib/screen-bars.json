@@ -1,238 +1,367 @@
 {
  "/work/duba/screens/all-set.jpg": {
   "bg": "#080808",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#080808"
  },
  "/work/duba/screens/betting.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f6f6f6"
  },
  "/work/duba/screens/confirm-pin.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f6f6f6"
  },
  "/work/duba/screens/create-pin.jpg": {
   "bg": "#eeeeee",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#eeeeee"
  },
  "/work/duba/screens/forgot-password.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f6f6f6"
  },
  "/work/duba/screens/login.jpg": {
   "bg": "#060606",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#f6f6f6"
  },
  "/work/duba/screens/settings.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f6f6f6"
  },
  "/work/duba/screens/sign-up.jpg": {
   "bg": "#070707",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#eeeeee"
  },
  "/work/duba/screens/splash.jpg": {
   "bg": "#060606",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#070707"
  },
  "/work/duba/screens/verify-email.jpg": {
   "bg": "#eeeeee",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#eeeeee"
  },
  "/work/duba/screens/welcome.jpg": {
   "bg": "#eeeeee",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#eeeeee"
  },
  "/work/shoppa/screens/add-item.jpg": {
   "bg": "#9a999e",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/shoppa/screens/join-list.jpg": {
   "bg": "#ebebed",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f7f7f7"
  },
  "/work/shoppa/screens/list-details.jpg": {
   "bg": "#eaeaec",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/shoppa/screens/offline-home.jpg": {
   "bg": "#ebebed",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/shoppa/screens/profile.jpg": {
   "bg": "#ebebed",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/shoppa/screens/search.jpg": {
   "bg": "#ebebed",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/shoppa/screens/shopping-complete.jpg": {
   "bg": "#eaeaec",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f7f7f7"
  },
  "/work/shoppa/screens/splash.jpg": {
   "bg": "#1b8e49",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#1a7740"
  },
  "/work/mealio/screens/add-card.jpg": {
   "bg": "#757575",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#7a7a7a"
  },
  "/work/mealio/screens/cart.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#fcfcfc"
  },
  "/work/mealio/screens/checkout.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f9f9f9"
  },
  "/work/mealio/screens/home.jpg": {
   "bg": "#f8f8f8",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/mealio/screens/meal-details.jpg": {
   "bg": "#fafafa",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#e6e6e6"
  },
  "/work/mealio/screens/order-easily.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f7f7f7"
  },
  "/work/mealio/screens/restaurant.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#e6e6e6"
  },
  "/work/mealio/screens/splash.jpg": {
   "bg": "#f5f5f5",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f6f6f6"
  },
  "/work/mealio/screens/welcome.jpg": {
   "bg": "#f7f7f7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f7f7f7"
  },
  "/work/picta/screens/freestyle.jpg": {
   "bg": "#fbfaf6",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#fbfaf6"
  },
  "/work/picta/screens/home.jpg": {
   "bg": "#fbfaf6",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#fbfaf6"
  },
  "/work/picta/screens/pass-n-play.jpg": {
   "bg": "#fbfaf6",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#fbfaf6"
  },
  "/work/picta/screens/splash.jpg": {
   "bg": "#251d50",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#251d50"
  },
  "/work/dearly/screens/decorate.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#d7d6d2"
  },
  "/work/dearly/screens/home.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#dcdbd7"
  },
  "/work/dearly/screens/letters.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#dcdbd7"
  },
  "/work/dearly/screens/make-it-yours.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ecebe7"
  },
  "/work/dearly/screens/paper.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#d7d6d2"
  },
  "/work/dearly/screens/profile.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#dcdbd7"
  },
  "/work/dearly/screens/send-anywhere.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ecebe7"
  },
  "/work/dearly/screens/signup.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ecebe7"
  },
  "/work/dearly/screens/template.jpg": {
   "bg": "#a3a29e",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#454442"
  },
  "/work/dearly/screens/templates.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#c9c8c4"
  },
  "/work/dearly/screens/welcome.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ecebe7"
  },
  "/work/dearly/screens/write.jpg": {
   "bg": "#ecebe7",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#d7d6d2"
  },
  "/work/folat/screens/add-customer.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/folat/screens/customer.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f3f3f1"
  },
  "/work/folat/screens/customers.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#e9e9e7"
  },
  "/work/folat/screens/distribution.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f3f3f1"
  },
  "/work/folat/screens/home.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#e9e9e7"
  },
  "/work/folat/screens/login.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/folat/screens/owing.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#eeeeec"
  },
  "/work/folat/screens/record-payment.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/folat/screens/report.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f3f3f1"
  },
  "/work/folat/screens/settings.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#f4f4f4"
  },
  "/work/folat/screens/today.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#e9e9e7"
  },
  "/work/adunni/screens/m-about.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#201713"
  },
  "/work/adunni/screens/m-collections.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#a7967b"
  },
  "/work/adunni/screens/m-contact.jpg": {
   "bg": "#ffffff",
-  "fg": "#000000"
+  "fg": "#000000",
+  "bottom": "#ffffff"
  },
  "/work/adunni/screens/m-home.jpg": {
   "bg": "#231f1c",
-  "fg": "#ffffff"
+  "fg": "#ffffff",
+  "bottom": "#1a1915"
+ },
+ "/work/duo-deck/screens/deck-deep-talk.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/deck-long-distance.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/home.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000101"
+ },
+ "/work/duo-deck/screens/on-1.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/on-2.jpg": {
+  "bg": "#5d95e2",
+  "fg": "#000000",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/on-3.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#100f11"
+ },
+ "/work/duo-deck/screens/play-deep-talk.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/play-first-spark.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/play-this-or-that.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/quiz-1.jpg": {
+  "bg": "#180d11",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/quiz-2.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/quiz-3.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/saved.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
+ },
+ "/work/duo-deck/screens/us.jpg": {
+  "bg": "#000000",
+  "fg": "#ffffff",
+  "bottom": "#000000"
  }
 }

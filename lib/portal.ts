@@ -1,6 +1,6 @@
 import proportions from "./proportions.json";
 
-export type Screen = { src: string; label: string; web?: boolean; statusBar?: boolean; island?: boolean };
+export type Screen = { src: string; label: string; web?: boolean; statusBar?: boolean; island?: boolean; safeBottom?: boolean };
 export type PortalExtra = {
   icon: { text: string; bg: string; fg: string };
   wordmark: { text: string; font: string; weight: number };
@@ -13,8 +13,8 @@ export type PortalExtra = {
 };
 
 /** Phone screens. `statusBar`: add a 9:41 bar (for captures without one). `island`: draw a Dynamic Island (off when the design already has one). */
-const phone = (dir: string, names: [string, string][], o: { statusBar?: boolean; island?: boolean } = {}): Screen[] =>
-  names.map(([f, label]) => ({ src: `/work/${dir}/screens/${f}.jpg`, label, statusBar: o.statusBar ?? true, island: o.island ?? true }));
+const phone = (dir: string, names: [string, string][], o: { statusBar?: boolean; island?: boolean; safeBottom?: boolean } = {}): Screen[] =>
+  names.map(([f, label]) => ({ src: `/work/${dir}/screens/${f}.jpg`, label, statusBar: o.statusBar ?? true, island: o.island ?? true, safeBottom: o.safeBottom ?? false }));
 const web = (dir: string, labels: string[]): Screen[] =>
   labels.map((label, i) => ({ src: `/work/${dir}/screens/s${i + 1}.jpg`, label, web: true }));
 
@@ -115,6 +115,19 @@ export const portal: Record<string, PortalExtra> = {
     ]),
     proportions: P.folat,
     screensCaption: "Captured from the app at phone size, filled with made-up customers. Scroll sideways, click to enlarge.",
+  },
+  "duo-deck": {
+    icon: { text: "d", bg: "linear-gradient(150deg,#f09ab3,#d9406f)", fg: "#ffffff" },
+    wordmark: { text: "duo deck.", font: "--font-bagel", weight: 400 },
+    banner: "/work/duo-deck/cover.jpg",
+    screens: phone("duo-deck", [
+      ["on-1", "Welcome"], ["on-2", "Play close or far apart"], ["quiz-1", "Quiz · together"], ["quiz-2", "Quiz · mood"], ["quiz-3", "Quiz · content"],
+      ["home", "Home"], ["deck-deep-talk", "Deck · Deep Talk"], ["play-deep-talk", "Play · Deep Talk"], ["play-first-spark", "Play · First Spark"],
+      ["play-this-or-that", "Would You Rather"], ["deck-long-distance", "Deck · Long Distance"], ["saved", "Saved"], ["us", "Us"], ["on-3", "Create account"],
+    ], { safeBottom: true }),
+    proportions: P["duo-deck"],
+    screensCaption: "Captured from the live app at phone size, playing as a guest. Scroll sideways, click to enlarge.",
+    extraFonts: [{ family: "Outfit", varName: "--font-outfit", use: "Interface & card prompts" }],
   },
   mealio: {
     icon: { text: "m", bg: "linear-gradient(150deg,#3ad374,#14b74d)", fg: "#fff" },
