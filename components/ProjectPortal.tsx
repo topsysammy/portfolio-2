@@ -222,12 +222,19 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
   };
 
   const facts = (p.meta ?? []).slice(0, 4);
+  const visitHref = p.live ?? p.behance;
+  const visit = (cls: string) =>
+    visitHref && (
+      <a className={`pvisit ${cls}`} href={visitHref} target="_blank" rel="noreferrer" title={p.live ? "Open the live project" : "Open the case study on Behance"}>
+        Visit <span aria-hidden="true">↗</span>
+        {!p.live && <small>Behance</small>}
+      </a>
+    );
   const tools = (
     <div className="ptools">
       {p.palette && <button type="button" onClick={copyCss}>{copied ? "✓ Palette copied" : "⧉ Copy palette as CSS"}</button>}
       <a href={`mailto:${profile.email}?subject=${encodeURIComponent(`About ${p.title}`)}`}>✉ Ask about this project</a>
-      {p.live && <a href={p.live} target="_blank" rel="noreferrer">↗ {p.kind === "vibecoded" ? `Try ${p.title}` : "Visit site"}</a>}
-      {p.behance && <a href={p.behance} target="_blank" rel="noreferrer">Bē View on Behance</a>}
+      {p.live && p.behance && <a href={p.behance} target="_blank" rel="noreferrer">Bē View on Behance</a>}
       <button type="button" onClick={onNext}>→ Next: {next.title}</button>
     </div>
   );
@@ -242,6 +249,7 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
             <Icon p={p} size={34} />
             <span><b>{p.title}</b><small>{kindLabel(p)}</small></span>
           </div>
+          {visit("pvisit-side")}
           <nav className="pnav" ref={navRef} aria-label={`${p.title} sections`}>
             {secs.map(([id, label]) => (
               <button key={id} type="button" className={on === id ? "is-on" : ""} aria-current={on === id ? "true" : undefined} onClick={() => go(id)}>
@@ -262,6 +270,7 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
                   {facts.map((m) => <div key={m.k}><dt className="label">{m.k}</dt><dd>{m.v}</dd></div>)}
                 </dl>
               )}
+              {visit("pvisit-head")}
             </header>
 
             <Sec id="intro" title="Introduction" caption={story[0]?.type === "lead" ? story[0].text : undefined}>

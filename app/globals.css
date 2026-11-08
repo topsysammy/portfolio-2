@@ -545,3 +545,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .change-why { grid-column: 2; }
   .pscreen-frame { width: 160px; border-radius: 24px; }
 }
+
+/* visit button (portal) */
+.pvisit { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 6px; background: var(--color-ink-deep); color: #fff; font-size: 15px; font-weight: 500; transition: transform 0.16s var(--ease), background-color 0.2s; }
+.pvisit:hover { background: #2a2634; }
+.pvisit:active { transform: scale(0.97); }
+.pvisit span { transition: transform 0.25s var(--ease); }
+.pvisit:hover span { transform: translate(2px, -2px); }
+.pvisit small { font-family: var(--font-mono); font-size: 10px; color: #a7a3b3; margin-left: 2px; }
+.pvisit-side { margin: -4px 6px 0; }
+.pvisit-head { display: none; }
+@media (max-width: 900px) { .pvisit-side { display: none; } .pvisit-head { display: inline-flex; margin-top: 6px; } }
