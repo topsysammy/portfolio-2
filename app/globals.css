@@ -557,6 +557,31 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pvisit-head { display: none; }
 @media (max-width: 900px) { .pvisit-side { display: none; } .pvisit-head { display: inline-flex; margin-top: 6px; } }
 :root { --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", Roboto, sans-serif; }
-.card .thumb-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card .thumb-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .card .badge { position: absolute; top: 14px; left: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px; border-radius: 999px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); font-family: var(--font-mono); font-size: 11px; color: var(--color-ink); }
 .pdemo { display: block; width: 100%; max-height: 78vh; border-radius: 18px; background: #111; object-fit: contain; box-shadow: inset 0 0 0 1px var(--color-line); }
+
+/* ================= iPhone mockup ================= */
+.iphone { --w: 212px; position: relative; display: block; width: var(--w); aspect-ratio: 393 / 852; padding: calc(var(--w) * 0.045); border-radius: calc(var(--w) * 0.2); background: linear-gradient(145deg, #4a4a4f 0%, #2a2a2e 22%, #1c1c1f 50%, #2d2d31 78%, #55555a 100%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), inset 0 0 0 calc(var(--w) * 0.012) #0b0b0c, 0 24px 48px -20px rgba(0, 0, 0, 0.45), 0 8px 16px -8px rgba(0, 0, 0, 0.3); box-sizing: content-box; }
+.iphone-screen { position: relative; display: block; width: 100%; height: 100%; border-radius: calc(var(--w) * 0.158); overflow: hidden; isolation: isolate; box-shadow: 0 0 0 calc(var(--w) * 0.01) #000; }
+.iphone-shot { position: absolute; inset: 0; display: block; }
+.iphone-shot.has-bar { top: 6.2%; }
+.iphone-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.iphone-bar { position: absolute; z-index: 2; top: 0; left: 0; right: 0; height: 6.2%; display: flex; align-items: center; justify-content: space-between; font: 600 calc(var(--w) * 0.056) / 1 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; letter-spacing: -0.01em; }
+.iphone-bar > span { width: 34.5%; display: flex; justify-content: center; align-items: center; padding-top: 1%; }
+.iphone-bar > span:first-child { padding-left: 4%; }
+.iphone-bar > span:last-child { padding-right: 4%; }
+.iphone-icons { display: inline-flex; align-items: center; gap: calc(var(--w) * 0.014); }
+.iphone-icons svg { height: calc(var(--w) * 0.036); width: auto; fill: currentColor; }
+.iphone-icons svg:last-child { height: calc(var(--w) * 0.04); }
+.iphone-island { position: absolute; z-index: 3; top: 1.35%; left: 50%; width: 29%; height: 3.6%; transform: translateX(-50%); border-radius: 999px; background: #000; }
+.iphone-home { position: absolute; z-index: 3; bottom: 0.9%; left: 50%; width: 35%; height: 0.55%; transform: translateX(-50%); border-radius: 999px; background: rgba(0, 0, 0, 0.55); mix-blend-mode: multiply; }
+.iphone-btn { position: absolute; z-index: -1; width: calc(var(--w) * 0.016); border-radius: 2px; background: linear-gradient(90deg, #3a3a3e, #5b5b60); }
+.iphone-btn-action { left: calc(var(--w) * -0.012); top: 17%; height: 4.2%; }
+.iphone-btn-up { left: calc(var(--w) * -0.012); top: 25%; height: 7.5%; }
+.iphone-btn-down { left: calc(var(--w) * -0.012); top: 34.5%; height: 7.5%; }
+.iphone-btn-power { right: calc(var(--w) * -0.012); top: 28%; height: 11%; }
+.pscreen-phone { display: block; padding: 4px 6px 10px; cursor: zoom-in; transition: transform 0.3s var(--ease); }
+.pscreen-phone:hover { transform: translateY(-4px); }
+.pscreens { gap: 18px; padding-left: 6px; }
+@media (max-width: 900px) { .iphone { --w: 172px; } }

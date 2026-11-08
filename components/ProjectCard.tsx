@@ -12,6 +12,7 @@ export default function ProjectCard({ p, i = 0, priority = false }: { p: Project
         {video ? (
           <video
             className="thumb-video"
+            style={{ background: video.bg ?? "#111" }}
             src={video.src}
             poster={video.poster ?? p.cover}
             autoPlay

@@ -1,6 +1,6 @@
 import proportions from "./proportions.json";
 
-export type Screen = { src: string; label: string; web?: boolean };
+export type Screen = { src: string; label: string; web?: boolean; statusBar?: boolean; island?: boolean };
 export type PortalExtra = {
   icon: { text: string; bg: string; fg: string };
   wordmark: { text: string; font: string; weight: number };
@@ -12,8 +12,9 @@ export type PortalExtra = {
   screensCaption?: string;
 };
 
-const phone = (dir: string, names: [string, string][]): Screen[] =>
-  names.map(([f, label]) => ({ src: `/work/${dir}/screens/${f}.jpg`, label }));
+/** Phone screens. `statusBar`: add a 9:41 bar (for captures without one). `island`: draw a Dynamic Island (off when the design already has one). */
+const phone = (dir: string, names: [string, string][], o: { statusBar?: boolean; island?: boolean } = {}): Screen[] =>
+  names.map(([f, label]) => ({ src: `/work/${dir}/screens/${f}.jpg`, label, statusBar: o.statusBar ?? true, island: o.island ?? true }));
 const web = (dir: string, labels: string[]): Screen[] =>
   labels.map((label, i) => ({ src: `/work/${dir}/screens/s${i + 1}.jpg`, label, web: true }));
 
@@ -29,7 +30,7 @@ export const portal: Record<string, PortalExtra> = {
       ["splash", "Splash"], ["welcome", "Welcome"], ["sign-up", "Sign up"], ["verify-email", "Verify email"],
       ["create-pin", "Create PIN"], ["all-set", "All set"], ["login", "Login"], ["forgot-password", "Forgot password"],
       ["confirm-pin", "Confirm PIN"], ["betting", "Betting"], ["settings", "Settings"],
-    ]),
+    ], { statusBar: false }),
     proportions: P.duba,
     extraFonts: [{ family: "Kodchasan", varName: "--font-kodchasan", use: "Wordmark" }],
   },
@@ -99,7 +100,7 @@ export const portal: Record<string, PortalExtra> = {
     screens: phone("mealio", [
       ["splash", "Splash"], ["welcome", "Welcome"], ["order-easily", "Onboarding"], ["home", "Home"],
       ["meal-details", "Meal details"], ["restaurant", "Restaurant"], ["cart", "Cart"], ["checkout", "Checkout"], ["add-card", "Add card"],
-    ]),
+    ], { statusBar: false, island: false }),
     proportions: P.mealio,
   },
   picta: {

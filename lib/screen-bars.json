@@ -1,0 +1,238 @@
+{
+ "/work/duba/screens/all-set.jpg": {
+  "bg": "#080808",
+  "fg": "#ffffff"
+ },
+ "/work/duba/screens/betting.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/duba/screens/confirm-pin.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/duba/screens/create-pin.jpg": {
+  "bg": "#eeeeee",
+  "fg": "#000000"
+ },
+ "/work/duba/screens/forgot-password.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/duba/screens/login.jpg": {
+  "bg": "#060606",
+  "fg": "#ffffff"
+ },
+ "/work/duba/screens/settings.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/duba/screens/sign-up.jpg": {
+  "bg": "#070707",
+  "fg": "#ffffff"
+ },
+ "/work/duba/screens/splash.jpg": {
+  "bg": "#060606",
+  "fg": "#ffffff"
+ },
+ "/work/duba/screens/verify-email.jpg": {
+  "bg": "#eeeeee",
+  "fg": "#000000"
+ },
+ "/work/duba/screens/welcome.jpg": {
+  "bg": "#eeeeee",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/add-item.jpg": {
+  "bg": "#9a999e",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/join-list.jpg": {
+  "bg": "#ebebed",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/list-details.jpg": {
+  "bg": "#eaeaec",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/offline-home.jpg": {
+  "bg": "#ebebed",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/profile.jpg": {
+  "bg": "#ebebed",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/search.jpg": {
+  "bg": "#ebebed",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/shopping-complete.jpg": {
+  "bg": "#eaeaec",
+  "fg": "#000000"
+ },
+ "/work/shoppa/screens/splash.jpg": {
+  "bg": "#1b8e49",
+  "fg": "#ffffff"
+ },
+ "/work/mealio/screens/add-card.jpg": {
+  "bg": "#757575",
+  "fg": "#ffffff"
+ },
+ "/work/mealio/screens/cart.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/checkout.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/home.jpg": {
+  "bg": "#f8f8f8",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/meal-details.jpg": {
+  "bg": "#fafafa",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/order-easily.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/restaurant.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/splash.jpg": {
+  "bg": "#f5f5f5",
+  "fg": "#000000"
+ },
+ "/work/mealio/screens/welcome.jpg": {
+  "bg": "#f7f7f7",
+  "fg": "#000000"
+ },
+ "/work/picta/screens/freestyle.jpg": {
+  "bg": "#fbfaf6",
+  "fg": "#000000"
+ },
+ "/work/picta/screens/home.jpg": {
+  "bg": "#fbfaf6",
+  "fg": "#000000"
+ },
+ "/work/picta/screens/pass-n-play.jpg": {
+  "bg": "#fbfaf6",
+  "fg": "#000000"
+ },
+ "/work/picta/screens/splash.jpg": {
+  "bg": "#251d50",
+  "fg": "#ffffff"
+ },
+ "/work/dearly/screens/decorate.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/home.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/letters.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/make-it-yours.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/paper.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/profile.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/send-anywhere.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/signup.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/template.jpg": {
+  "bg": "#a3a29e",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/templates.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/welcome.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/dearly/screens/write.jpg": {
+  "bg": "#ecebe7",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/add-customer.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/customer.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/customers.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/distribution.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/home.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/login.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/owing.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/record-payment.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/report.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/settings.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/folat/screens/today.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/adunni/screens/m-about.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/adunni/screens/m-collections.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/adunni/screens/m-contact.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000"
+ },
+ "/work/adunni/screens/m-home.jpg": {
+  "bg": "#231f1c",
+  "fg": "#ffffff"
+ }
+}

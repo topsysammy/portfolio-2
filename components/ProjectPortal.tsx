@@ -8,6 +8,7 @@ import { Palette, TypeSpecimen } from "./Specimens";
 import Lightbox, { type Shot } from "./Lightbox";
 import { copyText } from "./CopyEmail";
 import { useHasVideo } from "./MediaContext";
+import PhoneMockup from "./PhoneMockup";
 
 const cap = (s: string) => (s.charAt(0).toUpperCase() + s.slice(1)).replace(/\bi\b/g, "I");
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -322,9 +323,15 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
                 <div className="pscreens">
                   {x.screens.map((s) => (
                     <figure key={s.src} className={s.web ? "is-web" : ""}>
-                      <button type="button" className="pscreen-frame" onClick={() => open(s.src)} aria-label={`Enlarge ${s.label}`}>
-                        <Image src={s.src} alt={s.label} width={s.web ? 1280 : 393} height={s.web ? 800 : 852} sizes={s.web ? "640px" : "196px"} />
-                      </button>
+                      {s.web ? (
+                        <button type="button" className="pscreen-frame" onClick={() => open(s.src)} aria-label={`Enlarge ${s.label}`}>
+                          <Image src={s.src} alt={s.label} width={1280} height={800} sizes="640px" />
+                        </button>
+                      ) : (
+                        <button type="button" className="pscreen-phone" onClick={() => open(s.src)} aria-label={`Enlarge ${s.label}`}>
+                          <PhoneMockup src={s.src} alt={s.label} statusBar={s.statusBar} island={s.island} sizes="220px" />
+                        </button>
+                      )}
                       <figcaption className="label">{s.label}</figcaption>
                     </figure>
                   ))}

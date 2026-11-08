@@ -9,3 +9,4 @@ next-env.d.ts
 
 # drop-folder instructions (not deployed)
 public/**/README.md
+public/**/*.mov

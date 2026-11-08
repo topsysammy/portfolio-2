@@ -56,7 +56,7 @@ export type Project = {
   palette?: Swatch[];
   font?: { family: string; varName: string; weights: number[]; note: string; sample: string };
   /** Demo video. Shown only once the file exists in /public (checked at build time). */
-  video?: { src: string; poster?: string; caption?: string };
+  video?: { src: string; poster?: string; caption?: string; /** fill behind a portrait video on the card */ bg?: string };
 };
 
 export const projects: Project[] = [
@@ -572,7 +572,7 @@ export const projects: Project[] = [
     coverAlt: "Folat savings app screens",
     live: "https://folat-theta.vercel.app",
     page: true,
-    video: { src: "/work/folat/demo/demo.mp4", caption: "A walk through Folat: recording a payment, following up and sending a statement." },
+    video: { src: "/work/folat/demo/demo.mp4", poster: "/work/folat/demo/demo-poster.jpg", bg: "#E9DFC8", caption: "A walk through Folat: recording a payment, following up and sending a statement." },
     meta: [
       { k: "Role", v: "Designer & Builder" },
       { k: "Year", v: "2026" },
