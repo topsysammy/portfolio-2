@@ -5,7 +5,7 @@ import { projects, type Kind } from "@/lib/projects";
 
 const filters: { label: string; kind: Kind | "all" }[] = [
   { label: "All projects", kind: "all" },
-  { label: "Case studies", kind: "case" },
+  { label: "Applications", kind: "case" },
   { label: "Websites", kind: "website" },
   { label: "Vibecoded", kind: "vibecoded" },
 ];
