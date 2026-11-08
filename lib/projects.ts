@@ -25,6 +25,7 @@ export type Block =
       findings: string[];
       lists: { title: string; items: string[] }[];
     }
+  | { type: "changes"; eyebrow: string; title: string; items: { what: string; why: string }[] }
   | {
       type: "figure";
       eyebrow: string;
@@ -371,6 +372,69 @@ export const projects: Project[] = [
       weights: [400, 500, 600, 700],
       note: "Set in Figtree across the app. Sizes 12, 13, 14, 16, 18, 22, 28 and 42.",
       sample: "3 items left",
+    },
+  },
+  {
+    slug: "adunni",
+    title: "Adùnní",
+    year: "2026",
+    kind: "website",
+    label: "Website",
+    summary:
+      "A website for a Lagos couture atelier: hand-dyed adire, hand-woven aso-oke and made-to-measure womenswear, with bespoke fittings booked online.",
+    tags: ["Web Design", "Fashion", "E-commerce"],
+    cover: "/work/adunni/cover.jpg",
+    coverAlt: "Adùnní homepage with an arch-framed gown hero",
+    page: true,
+    meta: [
+      { k: "Role", v: "Web design" },
+      { k: "Year", v: "2026" },
+      { k: "Platform", v: "Web · desktop & mobile" },
+      { k: "Type", v: "Client work" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "Adùnní makes contemporary womenswear with Nigerian cloth and Nigerian hands. The site had to feel as considered as the clothes, show the collection, and turn interest into a booked fitting.",
+      },
+      {
+        type: "changes",
+        eyebrow: "what i designed",
+        title: "And why it works for Adùnní",
+        items: [
+          { what: "An arch-framed hero puts one gown, its name and its price in front of everything else.", why: "Visitors see the work, and what it costs, before they read a word." },
+          { what: "Categories run as a single serif strip under the hero: Gowns, Tailoring, Kaftans, Bridal, Aso-oke, Adire.", why: "People jump straight to what they came for without opening a menu." },
+          { what: "Bespoke gets its own dark banner with the three numbers that matter: 3 weeks, 30% deposit, 12 months of alterations.", why: "The big made-to-measure questions, how long and how much, are answered up front." },
+          { what: "The collection grid sits next to a Made to order panel covering sizing, timeline, delivery and aftercare.", why: "Fit and delivery worries are answered right where people decide." },
+          { what: "Contact is an appointment form: in the atelier or on video, with occasion, date and budget.", why: "The concierge gets everything needed to reply in one message." },
+          { what: "On mobile the hero goes full-bleed and the filters become scrollable chips.", why: "The collection stays easy to browse one-handed." },
+        ],
+      },
+      { type: "figure", eyebrow: "01 — home", title: "Home · arch layout", image: "/work/adunni/home.jpg", alt: "Adùnní home page, full length" },
+      { type: "figure", eyebrow: "02 — collections", title: "The Collection", image: "/work/adunni/collections.jpg", alt: "Adùnní collection page, full length" },
+      { type: "figure", eyebrow: "03 — about", title: "About the atelier", image: "/work/adunni/about.jpg", alt: "Adùnní about page, full length" },
+      { type: "figure", eyebrow: "04 — contact", title: "Contact & appointments", image: "/work/adunni/contact.jpg", alt: "Adùnní contact page, full length" },
+      { type: "figure", eyebrow: "mobile", title: "The same four pages on mobile", image: "/work/adunni/mobile.jpg", alt: "Adùnní mobile pages" },
+    ],
+    palette: [
+      { name: "Canvas", hex: "#F1F1F1" },
+      { name: "Paper", hex: "#FFFFFF" },
+      { name: "Sand", hex: "#EAE1D3" },
+      { name: "Cream", hex: "#F6F1EA" },
+      { name: "Linen", hex: "#D6CBBB" },
+      { name: "Clay", hex: "#8C4A2F" },
+      { name: "Stone", hex: "#6E6457" },
+      { name: "Taupe", hex: "#B8AC9B" },
+      { name: "Charcoal", hex: "#4A443C" },
+      { name: "Ink", hex: "#1B1916" },
+    ],
+    font: {
+      family: "Cormorant Garamond",
+      varName: "--font-cormorant",
+      weights: [300, 400, 500],
+      note: "Display L is Light 88, H1 Regular 60, H2 Regular 44. Italics carry the second half of every headline.",
+      sample: "Heritage Couture",
     },
   },
   {

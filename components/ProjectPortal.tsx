@@ -8,7 +8,7 @@ import { Palette, TypeSpecimen } from "./Specimens";
 import Lightbox, { type Shot } from "./Lightbox";
 import { copyText } from "./CopyEmail";
 
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const cap = (s: string) => (s.charAt(0).toUpperCase() + s.slice(1)).replace(/\bi\b/g, "I");
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const kindLabel = (p: Project) => (p.kind === "case" ? "Case study" : p.kind === "website" ? "Website" : "Application");
 
@@ -102,6 +102,18 @@ function BlockView({ b, open }: { b: Block; open: (src: string) => void }) {
             ))}
           </div>
         </>
+      );
+    case "changes":
+      return (
+        <ol className="change-list pchanges">
+          {b.items.map((it, i) => (
+            <li className="change" key={i}>
+              <span className="change-num serif">{String(i + 1).padStart(2, "0")}</span>
+              <p className="change-what" style={{ fontWeight: 500 }}>{it.what}</p>
+              <p className="change-why"><span className="label" style={{ display: "block", marginBottom: 4 }}>why it&apos;s better</span>{it.why}</p>
+            </li>
+          ))}
+        </ol>
       );
     case "figure":
       return (
@@ -297,7 +309,7 @@ function Window({ p, onClose, onNext }: { p: Project; onClose: () => void; onNex
             )}
 
             {x.screens.length > 0 && (
-              <Sec id="screens" title="Screens" actions={<span className="label">{x.screens.length} screens</span>} caption={x.screens[0].web ? "Captured from the live site." : "Cut out of the final designs. Scroll sideways, click to enlarge."}>
+              <Sec id="screens" title="Screens" actions={<span className="label">{x.screens.length} screens</span>} caption={x.screensCaption ?? (x.screens[0].web ? "Captured from the live site." : "Cut out of the final designs. Scroll sideways, click to enlarge.")}>
                 <div className="pscreens">
                   {x.screens.map((s) => (
                     <figure key={s.src} className={s.web ? "is-web" : ""}>

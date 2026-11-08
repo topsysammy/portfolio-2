@@ -9,6 +9,7 @@ export type PortalExtra = {
   screens: Screen[];
   proportions: [string, number][];
   extraFonts?: { family: string; varName: string; use: string }[];
+  screensCaption?: string;
 };
 
 const phone = (dir: string, names: [string, string][]): Screen[] =>
@@ -41,6 +42,18 @@ export const portal: Record<string, PortalExtra> = {
       ["search", "Search"], ["join-list", "Join list"], ["shopping-complete", "Shopping complete"], ["profile", "Profile"],
     ]),
     proportions: P.shoppa,
+  },
+  adunni: {
+    icon: { text: "a", bg: "linear-gradient(150deg,#a85c3c,#8c4a2f)", fg: "#f6f1ea" },
+    wordmark: { text: "Adùnní", font: "--font-cormorant", weight: 400 },
+    banner: "/work/adunni/cover.jpg",
+    screens: [
+      ...web("adunni", ["Home", "New in", "Bespoke", "Collection", "About", "Principles", "Contact"]),
+      ...phone("adunni", [["m-home", "Home · mobile"], ["m-collections", "Collection · mobile"], ["m-about", "About · mobile"], ["m-contact", "Contact · mobile"]]),
+    ],
+    proportions: P.adunni,
+    screensCaption: "Exported from the Figma file: desktop first, then mobile. Scroll sideways, click to enlarge.",
+    extraFonts: [{ family: "Manrope", varName: "--font-manrope", use: "Body, labels & buttons" }],
   },
   "duba-website": {
     icon: { text: "d", bg: "linear-gradient(150deg,#ff7a2e,#ff5c02)", fg: "#fff" },
