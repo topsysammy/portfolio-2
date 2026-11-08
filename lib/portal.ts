@@ -64,6 +64,22 @@ export const portal: Record<string, PortalExtra> = {
     proportions: P["duba-website"],
     extraFonts: [{ family: "Kodchasan", varName: "--font-kodchasan", use: "Wordmark" }],
   },
+  dearly: {
+    icon: { text: "d", bg: "linear-gradient(150deg,#a8344a,#8e2436)", fg: "#f8f7f4" },
+    wordmark: { text: "Dearly", font: "--font-shadows", weight: 400 },
+    banner: "/work/dearly/cover.jpg",
+    screens: phone("dearly", [
+      ["welcome", "Welcome"], ["make-it-yours", "Make it yours"], ["send-anywhere", "Send it anywhere"], ["signup", "Sign up"],
+      ["home", "Home"], ["templates", "Templates"], ["template", "Template preview"], ["write", "Write"],
+      ["paper", "Paper"], ["decorate", "Decorate"], ["letters", "Collection"], ["profile", "Profile"],
+    ]),
+    proportions: P.dearly,
+    screensCaption: "Captured from the app at phone size. Scroll sideways, click to enlarge.",
+    extraFonts: [
+      { family: "DM Sans", varName: "--font-dm-sans", use: "Body copy" },
+      { family: "Instrument Serif", varName: "--font-instrument", use: "Editorial accents" },
+    ],
+  },
   mealio: {
     icon: { text: "m", bg: "linear-gradient(150deg,#3ad374,#14b74d)", fg: "#fff" },
     wordmark: { text: "mealio", font: "--font-roboto", weight: 700 },

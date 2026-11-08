@@ -10,7 +10,7 @@ import { copyText } from "./CopyEmail";
 
 const cap = (s: string) => (s.charAt(0).toUpperCase() + s.slice(1)).replace(/\bi\b/g, "I");
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-const kindLabel = (p: Project) => (p.kind === "case" ? "Case study" : p.kind === "website" ? "Website" : "Application");
+const kindLabel = (p: Project) => p.label;
 
 function Sec({ id, title, actions, caption, children }: { id: string; title: string; actions?: ReactNode; caption?: ReactNode; children?: ReactNode }) {
   return (
