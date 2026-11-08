@@ -5,7 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Workflow from "@/components/Workflow";
 import Talk from "@/components/Talk";
 import { profile, skills, tools } from "@/lib/data";
-import { projects } from "@/lib/projects";
+import { featured } from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -34,7 +34,10 @@ export default function Home() {
           </Reveal>
 
           <div className="grid">
-            {projects.map((p, i) => <ProjectCard key={p.slug} p={p} i={i} priority={i < 2} />)}
+            {featured.map((p, i) => <ProjectCard key={p.slug} p={p} i={i} priority={i < 2} />)}
+          </div>
+          <div className="more">
+            <Link className="cta" href="/work">See all work <span className="ar">→</span></Link>
           </div>
 
           <section className="sec">

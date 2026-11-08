@@ -1089,6 +1089,10 @@ export const projects: Project[] = [
 
 export const caseStudies = projects.filter((p) => p.page);
 
+/** Selected projects on the home page, in this order. The Work page shows everything. */
+const FEATURED = ["duba", "adunni", "duo-deck", "folat", "saaspro", "morenikeji"];
+export const featured = FEATURED.map((slug) => projects.find((p) => p.slug === slug)!).filter(Boolean);
+
 export function projectHref(p: Project) {
   return `#${p.slug}`;
 }
