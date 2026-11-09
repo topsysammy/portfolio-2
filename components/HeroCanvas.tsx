@@ -23,9 +23,11 @@ const f = (slug: string, kind: Kind, file: string, label: string): Frame => ({
 const COLUMNS: Frame[][] = [
   [f("duo-deck", "phone", "home", "Home"), f("adunni", "cover", "", "Cover"), f("duba", "phone", "welcome", "Welcome")],
   [f("saaspro", "web", "s1", "Dashboard"), f("dearly", "phone", "home", "Home"), f("adunni", "web", "s1", "Home")],
+  [f("legacy-homes", "phone", "home", "Home"), f("legacy-homes-website", "web", "s1", "Hero"), f("legacy-homes", "phone", "property", "Property")],
   [f("folat", "phone", "home", "Home"), f("saaspro-website", "cover", "", "Cover"), f("mealio", "phone", "home", "Home")],
   [f("duba-website", "web", "s1", "Hero"), f("shoppa", "phone", "offline-home", "Home"), f("about", "portrait", "", "Temitope"), f("morenikeji", "web", "s1", "Hero")],
   [f("picta", "phone", "home", "Home"), f("duo-deck", "cover", "", "Cover"), f("folat", "phone", "customer", "Customer")],
+  [f("legacy-homes-web", "web", "s3", "Saved properties"), f("legacy-homes", "phone", "crypto", "Pay with crypto"), f("legacy-homes-website", "cover", "", "Cover")],
   [f("saaspro-website", "web", "s1", "Home"), f("duo-deck", "phone", "play-deep-talk", "Deep Talk"), f("dearly", "cover", "", "Cover")],
   [f("dearly", "phone", "write", "Write"), f("saaspro", "web", "s3", "Products"), f("mealio", "phone", "meal-details", "Meal details")],
 ];

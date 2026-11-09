@@ -363,5 +363,70 @@
   "bg": "#000000",
   "fg": "#ffffff",
   "bottom": "#000000"
+ },
+ "/work/legacy-homes/screens/buy.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "bottom": "#ffffff"
+ },
+ "/work/legacy-homes/screens/chat.jpg": {
+  "bg": "#455852",
+  "fg": "#ffffff",
+  "bottom": "#fcfcfc"
+ },
+ "/work/legacy-homes/screens/crypto.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "bottom": "#ffffff"
+ },
+ "/work/legacy-homes/screens/home.jpg": {
+  "bg": "#fafafa",
+  "fg": "#000000",
+  "bottom": "#455852"
+ },
+ "/work/legacy-homes/screens/notifications.jpg": {
+  "bg": "#fcfcfc",
+  "fg": "#000000",
+  "bottom": "#fcfcfc"
+ },
+ "/work/legacy-homes/screens/onb1.jpg": {
+  "bg": "#5a6778",
+  "fg": "#ffffff",
+  "bottom": "#fafafa"
+ },
+ "/work/legacy-homes/screens/onb2.jpg": {
+  "bg": "#b1b1b1",
+  "fg": "#000000",
+  "bottom": "#fafafa"
+ },
+ "/work/legacy-homes/screens/property.jpg": {
+  "bg": "#403a2a",
+  "fg": "#ffffff",
+  "bottom": "#fafafa"
+ },
+ "/work/legacy-homes/screens/register.jpg": {
+  "bg": "#455852",
+  "fg": "#ffffff",
+  "bottom": "#fafafa"
+ },
+ "/work/legacy-homes/screens/saved.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "bottom": "#455852"
+ },
+ "/work/legacy-homes/screens/search.jpg": {
+  "bg": "#fafafa",
+  "fg": "#000000",
+  "bottom": "#455852"
+ },
+ "/work/legacy-homes/screens/settings.jpg": {
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "bottom": "#455852"
+ },
+ "/work/legacy-homes/screens/splash.jpg": {
+  "bg": "#455852",
+  "fg": "#ffffff",
+  "bottom": "#455852"
  }
 }

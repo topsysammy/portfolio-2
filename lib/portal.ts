@@ -67,6 +67,26 @@ export const portal: Record<string, PortalExtra> = {
     proportions: P.saaspro,
     screensCaption: "Exported from the Figma file: all ten dashboard screens. Scroll sideways, click to enlarge.",
   },
+  "legacy-homes-web": {
+    icon: { text: "L", bg: "linear-gradient(150deg,#5d726b,#3a4a45)", fg: "#ffffff" },
+    wordmark: { text: "LEGACY HOMES", font: "--font-satoshi", weight: 900 },
+    banner: "/work/legacy-homes-web/cover.jpg",
+    dark: true,
+    screens: web("legacy-homes-web", [
+      "Search", "Search filter", "Saved properties", "Saved · empty", "Profile", "Edit profile", "Settings", "Notifications", "Notifications · empty", "Messages",
+    ]),
+    proportions: P["legacy-homes-web"],
+    screensCaption: "Exported from the Figma file. Scroll sideways, click to enlarge.",
+  },
+  "legacy-homes-website": {
+    icon: { text: "L", bg: "linear-gradient(150deg,#5d726b,#3a4a45)", fg: "#ffffff" },
+    wordmark: { text: "Legacy Homes", font: "--font-satoshi", weight: 700 },
+    banner: "/work/legacy-homes-website/cover.jpg",
+    dark: true,
+    screens: web("legacy-homes-website", ["Hero & search", "Popular properties", "How we help", "Install the app", "Success stories", "FAQs & footer"]),
+    proportions: P["legacy-homes-website"],
+    screensCaption: "Exported from the Figma file, section by section. Scroll sideways, click to enlarge.",
+  },
   "saaspro-website": {
     icon: { text: "s", bg: "linear-gradient(150deg,#4a86ff,#2a5fd6)", fg: "#ffffff" },
     wordmark: { text: "SaasPro", font: "--font-system", weight: 700 },
@@ -128,6 +148,19 @@ export const portal: Record<string, PortalExtra> = {
     proportions: P["duo-deck"],
     screensCaption: "Captured from the live app at phone size, playing as a guest. Scroll sideways, click to enlarge.",
     extraFonts: [{ family: "Outfit", varName: "--font-outfit", use: "Interface & card prompts" }],
+  },
+  "legacy-homes": {
+    icon: { text: "L", bg: "linear-gradient(150deg,#5d726b,#3a4a45)", fg: "#ffffff" },
+    wordmark: { text: "LEGACY HOMES", font: "--font-satoshi", weight: 900 },
+    banner: "/work/legacy-homes/cover.jpg",
+    dark: true,
+    screens: phone("legacy-homes", [
+      ["splash", "Splash"], ["onb1", "Find your dream home"], ["onb2", "Find your ideal property"], ["register", "Create an account"],
+      ["home", "Home"], ["search", "Search"], ["property", "Property details"], ["buy", "Buy property"], ["crypto", "Pay with crypto"],
+      ["chat", "Chat with the agent"], ["saved", "Saved properties"], ["notifications", "Notifications"], ["settings", "Settings"],
+    ], { statusBar: false }),
+    proportions: P["legacy-homes"],
+    screensCaption: "Exported from the Figma file. Scroll sideways, click to enlarge.",
   },
   mealio: {
     icon: { text: "m", bg: "linear-gradient(150deg,#3ad374,#14b74d)", fg: "#fff" },

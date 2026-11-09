@@ -1,6 +1,6 @@
 import { workflow } from "./data";
 
-export type Kind = "case" | "website" | "vibecoded" | "dashboard";
+export type Kind = "case" | "website" | "vibecoded" | "dashboard" | "screenshots";
 
 export type Swatch = { name: string; hex: string };
 
@@ -501,6 +501,66 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "legacy-homes-web",
+    title: "Legacy Homes Web App",
+    year: "2025",
+    kind: "dashboard",
+    label: "Dashboard",
+    summary:
+      "The desktop side of Legacy Homes: a property dashboard for searching listings, saving favourites, messaging agents and managing your account and payments.",
+    tags: ["Dashboard", "Real Estate", "Web App"],
+    cover: "/work/legacy-homes-web/cover.jpg",
+    coverAlt: "Legacy Homes web app: saved properties and profile in browser windows",
+    page: true,
+    meta: [
+      { k: "Role", v: "UI/UX Designer" },
+      { k: "Year", v: "2025" },
+      { k: "Platform", v: "Web app · desktop" },
+      { k: "Scope", v: "Search, filters, saved, profile, settings, notifications, messages" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "The same Legacy Homes, made for a bigger screen. Buyers who compare many homes at once get a dashboard with room for search, saved listings and conversations side by side.",
+      },
+      {
+        type: "changes",
+        eyebrow: "what i designed",
+        title: "And why it works on desktop",
+        items: [
+          { what: "A forest-green sidebar holds Dashboard, Saved Properties, Profile, Settings and Help, with a 20% discount card and Buy property now at the bottom.", why: "Navigation never moves, and the offer stays in view without interrupting." },
+          { what: "Search sits in one bar: location, price range, bedrooms and bathrooms, then Search property.", why: "The four questions every buyer asks are answered before the results load." },
+          { what: "Search filter opens as a modal with a price slider, property type chips, bedroom and bathroom steps, and amenities.", why: "Narrowing results never takes the buyer off the page." },
+          { what: "Saved properties is a four-across grid of photo cards with name, price in naira, area and rating.", why: "Shortlisted homes are easy to compare at a glance." },
+          { what: "Empty states for saved properties and notifications use a simple illustration and one line of help.", why: "A blank page still tells people what to do next." },
+          { what: "Messages put the agent chat on the full page, with a Submit and an Active calls button.", why: "Talking to the agent feels like part of the app, not a side panel." },
+        ],
+      },
+      { type: "figure", eyebrow: "shortlist", title: "Saved properties", image: "/work/legacy-homes-web/saved.jpg", alt: "Legacy Homes saved properties grid" },
+      { type: "figure", eyebrow: "narrow it down", title: "Search filter", image: "/work/legacy-homes-web/filter.jpg", alt: "Legacy Homes search filter modal" },
+      { type: "figure", eyebrow: "talk to the agent", title: "Messages", image: "/work/legacy-homes-web/messages.jpg", alt: "Legacy Homes messages screen" },
+      { type: "figure", eyebrow: "account", title: "Edit profile", image: "/work/legacy-homes-web/profile.jpg", alt: "Legacy Homes edit profile screen" },
+      { type: "figure", eyebrow: "preferences", title: "Settings", image: "/work/legacy-homes-web/settings.jpg", alt: "Legacy Homes settings screen" },
+    ],
+    palette: [
+      { name: "Forest", hex: "#455852" },
+      { name: "Orange", hex: "#E87A1E" },
+      { name: "Copper", hex: "#AD7033" },
+      { name: "Paper", hex: "#F7F7F7" },
+      { name: "White", hex: "#FFFFFF" },
+      { name: "Grey", hex: "#A1A1A1" },
+      { name: "Ink", hex: "#080808" },
+    ],
+    font: {
+      family: "Satoshi",
+      varName: "--font-satoshi",
+      weights: [400, 500, 700, 900],
+      note: "Satoshi, the same as the mobile app, so both feel like one product.",
+      sample: "Locate your next property today!",
+    },
+  },
+  {
     slug: "saaspro-website",
     title: "SaasPro Website",
     year: "2026",
@@ -553,6 +613,62 @@ export const projects: Project[] = [
       { name: "Muted", hex: "#A0A0A0" },
       { name: "Text", hex: "#FFFFFF" },
     ],
+  },
+  {
+    slug: "legacy-homes-website",
+    title: "Legacy Homes Website",
+    year: "2025",
+    kind: "website",
+    label: "Website",
+    summary:
+      "The landing page for Legacy Homes: search for a property straight from the hero, browse popular homes, and download the app.",
+    tags: ["Web Design", "Landing Page", "Real Estate"],
+    cover: "/work/legacy-homes-website/cover.jpg",
+    coverAlt: "Legacy Homes landing page on an iPad",
+    page: true,
+    meta: [
+      { k: "Role", v: "Web design" },
+      { k: "Year", v: "2025" },
+      { k: "Platform", v: "Web · desktop" },
+      { k: "Sections", v: "Hero & search, popular properties, how we help, app, stories, FAQs" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "Find your perfect property with us. The landing page does one job: get a visitor searching for a home in the first screen, then give them every reason to trust Legacy Homes and download the app.",
+      },
+      {
+        type: "changes",
+        eyebrow: "what i designed",
+        title: "And why it works for Legacy Homes",
+        items: [
+          { what: "The hero pairs one bold line, with us in orange, against a large photo of a modern home, with Book an appointment as the only button.", why: "The promise and the product are clear in a single glance." },
+          { what: "1800+ customers, 1200+ certified realtors and 1000+ outlets sit right under the headline.", why: "Trust is built before the visitor scrolls." },
+          { what: "A search bar for location, price, bedrooms and bathrooms overlaps the hero and the next section.", why: "Visitors can start looking for a home without leaving the first screen." },
+          { what: "Browse popular properties shows four photo cards on the brand green, with See all properties in orange.", why: "Real homes and prices make the site feel alive." },
+          { what: "Install our user friendly app shows the real app screens tilted on a dark band, with Google Play and App Store buttons.", why: "The website hands people over to the app, where buying happens." },
+          { what: "A success story and an FAQ close the page before a simple footer with a newsletter sign-up.", why: "The last doubts are answered just before the visitor leaves." },
+        ],
+      },
+      { type: "figure", eyebrow: "landing page", title: "Homepage", image: "/work/legacy-homes-website/home.jpg", alt: "Legacy Homes landing page, full length", tall: true },
+    ],
+    palette: [
+      { name: "Forest", hex: "#455852" },
+      { name: "Night", hex: "#222A27" },
+      { name: "Orange", hex: "#E87A1E" },
+      { name: "Paper", hex: "#F7F7F7" },
+      { name: "White", hex: "#FFFFFF" },
+      { name: "Grey", hex: "#A1A1A1" },
+      { name: "Ink", hex: "#080808" },
+    ],
+    font: {
+      family: "Satoshi",
+      varName: "--font-satoshi",
+      weights: [400, 500, 700, 900],
+      note: "Satoshi, the same as the app, so the site and the product feel like one brand.",
+      sample: "Find your perfect property with us.",
+    },
   },
   {
     slug: "duba-website",
@@ -809,6 +925,61 @@ export const projects: Project[] = [
       weights: [400],
       note: "Bagel Fat One for the logo and headings. Outfit for the interface and the card prompts, which have to read well aloud.",
       sample: "Real talk, closer hearts.",
+    },
+  },
+  {
+    slug: "legacy-homes",
+    title: "Legacy Homes",
+    year: "2025",
+    kind: "case",
+    label: "Application",
+    summary:
+      "A real estate app for finding, saving and buying property in Nigeria: browse listings, talk to the agent, and pay by card or crypto, all from your phone.",
+    tags: ["UI/UX", "Real Estate", "Mobile App"],
+    cover: "/work/legacy-homes/cover.jpg",
+    coverAlt: "Legacy Homes real estate app screens",
+    page: true,
+    meta: [
+      { k: "Role", v: "UI/UX Designer" },
+      { k: "Year", v: "2025" },
+      { k: "Platform", v: "Android mobile app" },
+      { k: "Scope", v: "Onboarding, sign up, search, property, payment, chat, saved, settings" },
+    ],
+    blocks: [
+      {
+        type: "lead",
+        eyebrow: "the idea",
+        text: "Finding the perfect home just got easier. Legacy Homes puts verified listings, the agent and the payment in one app, so buying, renting or investing in property takes a few taps instead of many visits.",
+      },
+      {
+        type: "changes",
+        eyebrow: "what i designed",
+        title: "And why it works for Legacy Homes",
+        items: [
+          { what: "Onboarding is three full-bleed homes with a slanted cut, one line of copy each, and Skip on every screen.", why: "It sells the feeling of a new home before asking for anything." },
+          { what: "Sign up asks for an email only, with Apple and Google as one-tap options.", why: "Fewer fields stand between a visitor and the first listing." },
+          { what: "Home greets you by name, then search, a filter button and All / For sale / To let chips sit above big photo cards priced in naira.", why: "The first choice, buy or rent, is one tap." },
+          { what: "The property page leads with a photo gallery, then the agent, the size, bathrooms and bedrooms, and a Buy Property button that stays on screen.", why: "The facts a buyer checks first are all above the fold." },
+          { what: "Checkout offers card or crypto. Crypto shows a QR code, the wallet address with Copy and Share, and a warning to check the address before sending.", why: "Paying in crypto feels safe, and the most costly mistake is called out." },
+          { what: "Chat with the listing agent, saved properties, notifications and settings all live in the same four-tab bar.", why: "Everything after the first visit is one tap from home." },
+        ],
+      },
+    ],
+    palette: [
+      { name: "Forest", hex: "#455852" },
+      { name: "Orange", hex: "#E87A1E" },
+      { name: "Copper", hex: "#AD7033" },
+      { name: "Paper", hex: "#F7F7F7" },
+      { name: "White", hex: "#FFFFFF" },
+      { name: "Grey", hex: "#A1A1A1" },
+      { name: "Ink", hex: "#080808" },
+    ],
+    font: {
+      family: "Satoshi",
+      varName: "--font-satoshi",
+      weights: [400, 500, 700, 900],
+      note: "Satoshi throughout: a clean geometric sans that keeps prices, addresses and buttons easy to scan.",
+      sample: "Locate your next Property Today",
     },
   },
   {

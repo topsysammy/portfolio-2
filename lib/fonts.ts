@@ -42,6 +42,8 @@ export const dmSans = localFont({ src: [{ path: "./font-files/dm-sans-normal.wof
 export const bagel = localFont({ src: [{ path: "./font-files/bagel-normal.woff2", weight: "400", style: "normal" }], variable: "--font-bagel", preload: false });
 export const outfit = localFont({ src: [{ path: "./font-files/outfit-normal.woff2", weight: "400 700", style: "normal" }], variable: "--font-outfit", preload: false });
 
-export const projectFonts = [jakarta, figtree, roboto, kodchasan, fredoka, dmMono, instrumentSans, jost, cormorant, manrope, shadowsTwo, dmSans, bagel, outfit]
+export const satoshi = localFont({ src: [{ path: "./font-files/satoshi-normal.woff2", weight: "300 900", style: "normal" }], variable: "--font-satoshi", preload: false });
+
+export const projectFonts = [jakarta, figtree, roboto, kodchasan, fredoka, dmMono, instrumentSans, jost, cormorant, manrope, shadowsTwo, dmSans, bagel, outfit, satoshi]
   .map((f) => f.variable)
   .join(" ");
