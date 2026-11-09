@@ -31,11 +31,7 @@ export default function WorkFeatured() {
         <p>Start with the spotlight, then browse everything by type. Open any project to see what I designed and why.</p>
       </header>
       <Spotlight />
-      <nav className="wf-jump" aria-label="Jump to a section">
-        {GROUPS.map((g) => (
-          <a key={g.kind} href={`#type-${g.kind}`}>{g.title} <small>{projects.filter((p) => p.kind === g.kind).length}</small></a>
-        ))}
-      </nav>
+      <JumpBar />
       {GROUPS.map((g) => {
         const list = projects.filter((p) => p.kind === g.kind);
         return (
@@ -53,6 +49,76 @@ export default function WorkFeatured() {
         );
       })}
     </div>
+  );
+}
+
+/** Pinned category bar: highlights the section being read, with a pill that slides between categories. */
+function JumpBar() {
+  const [active, setActive] = useState<Kind | null>(null);
+  const nav = useRef<HTMLElement>(null);
+  const pill = useRef<HTMLSpanElement>(null);
+  const lock = useRef(0);
+  /** Where the bar sits once it's pinned: its sticky top plus its own height. */
+  const pinnedBottom = () => {
+    const el = nav.current;
+    if (!el) return 150;
+    return (parseFloat(getComputedStyle(el).top) || 0) + el.offsetHeight;
+  };
+
+  // scroll-spy: the active section is the last one whose top has passed just under the bar
+  useEffect(() => {
+    let raf = 0;
+    const check = () => {
+      raf = 0;
+      if (performance.now() < lock.current) return;
+      const line = pinnedBottom() + 24;
+      let hit: Kind | null = null;
+      for (const g of GROUPS) {
+        const el = document.getElementById(`type-${g.kind}`);
+        if (el && el.getBoundingClientRect().top <= line) hit = g.kind;
+      }
+      setActive(hit);
+    };
+    const on = () => { if (!raf) raf = requestAnimationFrame(check); };
+    check();
+    window.addEventListener("scroll", on, { passive: true });
+    window.addEventListener("resize", on);
+    return () => { window.removeEventListener("scroll", on); window.removeEventListener("resize", on); cancelAnimationFrame(raf); };
+  }, []);
+
+  // move the pill under the active link, and keep it in view when the bar scrolls sideways (phones)
+  useEffect(() => {
+    const bar = nav.current, p = pill.current;
+    if (!bar || !p) return;
+    const link = active ? bar.querySelector<HTMLElement>(`[data-kind="${active}"]`) : null;
+    if (!link) { p.style.opacity = "0"; return; }
+    p.style.opacity = "1";
+    p.style.width = `${link.offsetWidth}px`;
+    p.style.transform = `translateX(${link.offsetLeft}px)`;
+    const l = link.offsetLeft - bar.scrollLeft, r = l + link.offsetWidth;
+    if (l < 0 || r > bar.clientWidth) bar.scrollTo({ left: link.offsetLeft - 24, behavior: "smooth" });
+  }, [active]);
+
+  const go = (e: React.MouseEvent, kind: Kind) => {
+    const el = document.getElementById(`type-${kind}`);
+    if (!el) return;
+    e.preventDefault();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const top = el.getBoundingClientRect().top + window.scrollY - pinnedBottom() - 16;
+    lock.current = performance.now() + (reduce ? 0 : 900);
+    setActive(kind);
+    window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+  };
+
+  return (
+    <nav ref={nav} className="wf-jump" aria-label="Jump to a section">
+      <span ref={pill} className="wf-pill" aria-hidden="true" />
+      {GROUPS.map((g) => (
+        <a key={g.kind} data-kind={g.kind} href={`#type-${g.kind}`} className={active === g.kind ? "is-on" : ""} aria-current={active === g.kind ? "true" : undefined} onClick={(e) => go(e, g.kind)}>
+          {g.title} <small>{projects.filter((p) => p.kind === g.kind).length}</small>
+        </a>
+      ))}
+    </nav>
   );
 }
 
