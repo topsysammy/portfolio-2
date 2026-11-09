@@ -25,7 +25,7 @@ export default function Nav() {
   }, [home]);
 
   return (
-    <header className={`nav ${onHero ? "on-hero" : "solid"} ${hide ? "hide" : ""}`}>
+    <header className={`nav solid ${onHero ? "over-hero" : ""} ${hide ? "hide" : ""}`}>
       <Link href="/" className="brandmark" aria-label="Temitope Samuel, home">
         <span className="c">©</span>
         <span className="roll">
