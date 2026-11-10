@@ -4,8 +4,8 @@ import { geist, geistMono, instrument, interTight, projectFonts } from "@/lib/fo
 import ProjectPortal from "@/components/ProjectPortal";
 import { MediaProvider } from "@/components/MediaContext";
 import { presentVideos } from "@/lib/media";
-import Nav from "@/components/Nav";
 import Loader from "@/components/Loader";
+import Nav from "@/components/Nav";
 import Toast from "@/components/Toast";
 
 const title = "Temitope Samuel · Product Designer & Design Engineer";
@@ -29,10 +29,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{if(sessionStorage.getItem('seen-intro'))document.documentElement.classList.add('seen','ready')}catch(e){}`,
+            __html: `try{var d=document.documentElement;if(sessionStorage.getItem('seen-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('seen','ready');else d.classList.add('op-intro')}catch(e){document.documentElement.classList.add('seen','ready')}`,
           }}
         />
-        <noscript><style>{`.loader{display:none}.rv{opacity:1;transform:none}.hero .photo,.hero .loc,.hero .role,.hero .big{opacity:1!important;transform:none!important}.hero .photo{transform:translateX(-50%)!important}`}</style></noscript>
+        <noscript><style>{`.intro-scene{display:none}.rv{opacity:1;transform:none}.hc-world,.hc-center>*,.hc-bar,.hc-cursor{opacity:1!important;translate:none!important}`}</style></noscript>
       </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>

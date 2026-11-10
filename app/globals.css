@@ -73,12 +73,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .chip { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13px; color: var(--color-ink-2); box-shadow: inset 0 0 0 1px var(--color-line); background: #fff; white-space: nowrap; }
 
-/* ---------- loader ---------- */
-.loader { position: fixed; inset: 0; z-index: 300; background: #141517; color: #fff; display: grid; place-items: center; transition: transform 0.9s var(--ease-io), border-radius 0.9s var(--ease-io); border-bottom-left-radius: 50% 0; border-bottom-right-radius: 50% 0; }
-.loader.done { transform: translateY(-100%); border-bottom-left-radius: 50% 14vh; border-bottom-right-radius: 50% 14vh; pointer-events: none; }
-.loader p { display: flex; align-items: center; gap: 18px; margin: 0; font-family: var(--font-display); font-size: clamp(36px, 4.4vw, 64px); letter-spacing: -0.04em; font-weight: 500; }
-.loader .dotb { width: 12px; height: 12px; border-radius: 50%; background: #fff; }
-.loader small { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 12px; color: #6f6f6f; white-space: nowrap; }
 
 /* ---------- nav ---------- */
 .nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 22px var(--pad); pointer-events: none; transition: transform 0.5s var(--ease), color 0.4s; color: var(--color-ink); }
@@ -108,13 +102,58 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 @media (max-width: 400px) { .navlinks a { padding: 8px 9px; } }
 
+/* ---------- opening scene: one frame, then zoom out to the canvas ---------- */
+.intro-scene { --zoom: 1.35; position: fixed; inset: 0; z-index: 300; overflow: hidden; background: #edece8; transition: background-color 1.4s var(--ease) 0.25s; }
+.seen .intro-scene { display: none; }
+.intro-scene.is-zoom { background-color: transparent; }
+.intro-scene.is-zoom { pointer-events: none; }
+.intro-stage { position: absolute; inset: 0; transform-origin: var(--origin); scale: var(--zoom); transition: scale 2s var(--ease-io); }
+.intro-scene.is-zoom .intro-stage { scale: 1; }
+.intro-bg { position: absolute; inset: -40%; background-color: #edece8; background-image: radial-gradient(circle, #d2d0ca 1px, transparent 1.2px); background-size: 24px 24px; transition: opacity 1.4s var(--ease) 0.25s; }
+.intro-scene.is-zoom .intro-bg { opacity: 0; }
+.intro-frame { position: absolute; border-radius: 6px; }
+.intro-frame::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 30px 60px -30px rgba(0,0,0,0.25); opacity: 0; scale: 0.94; transition: opacity 0.85s var(--ease), scale 1.05s var(--ease), background-color 0.6s; }
+.intro-scene:not(.is-idle) .intro-frame::before { opacity: 1; scale: 1; }
+.intro-scene.is-zoom .intro-frame::before { opacity: 0; transition-duration: 1.2s; }
+.intro-label { position: absolute; left: 0; bottom: 100%; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; white-space: nowrap; font: 11px var(--font-mono); color: #8d8a84; opacity: 0; transition: opacity 0.7s var(--ease) 0.25s, color 0.45s; }
+.intro-label svg { width: 11px; height: 11px; }
+.intro-scene:not(.is-idle) .intro-label { opacity: 1; }
+.intro-scene.is-select .intro-label { color: #0d99ff; }
+.intro-scene.is-zoom .intro-label { opacity: 0; transition-delay: 0s; }
+.intro-name { position: absolute; display: block; font-weight: 500; color: var(--color-ink); text-align: center; white-space: nowrap; opacity: 0; translate: 0 10px; transition: opacity 0.95s var(--ease), translate 1.05s var(--ease); }
+.intro-scene.is-name .intro-name, .intro-scene.is-cursor .intro-name, .intro-scene.is-select .intro-name, .intro-scene.is-zoom .intro-name { opacity: 1; translate: 0 0; }
+.intro-sel { position: absolute; inset: -1px; border-radius: 6px; box-shadow: 0 0 0 1.5px #0d99ff; clip-path: inset(0 100% 100% 0); transition: clip-path 0.95s var(--ease-io); }
+.intro-sel i { position: absolute; width: 9px; height: 9px; background: #fff; border: 1.5px solid #0d99ff; border-radius: 2px; }
+.intro-sel .tl { top: -5px; left: -5px; } .intro-sel .tr { top: -5px; right: -5px; } .intro-sel .bl { bottom: -5px; left: -5px; } .intro-sel .br { bottom: -5px; right: -5px; }
+.intro-scene.is-select .intro-sel { clip-path: inset(-12px); }
+.intro-scene.is-zoom .intro-sel { clip-path: inset(-12px); opacity: 0; transition: opacity 0.85s; }
+.intro-size { position: absolute; left: 50%; top: 100%; margin-top: 10px; translate: -50% 0; padding: 3px 8px; border-radius: 4px; background: #0d99ff; color: #fff; font: 11px var(--font-mono); white-space: nowrap; opacity: 0; transition: opacity 0.5s 0.75s; }
+.intro-scene.is-select .intro-size { opacity: 1; }
+.intro-scene.is-zoom .intro-size { opacity: 0; transition-delay: 0s; }
+.intro-cursor { position: absolute; left: 0; top: 0; display: flex; align-items: flex-start; pointer-events: none; translate: 105vw 90vh; opacity: 0; transition: translate 0.95s var(--ease-io), opacity 0.5s; }
+.intro-cursor svg { width: 18px; height: 18px; fill: var(--color-violet); stroke: #fff; stroke-width: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+.intro-cursor b { margin: 14px 0 0 -2px; padding: 3px 8px; border-radius: 4px 999px 999px 999px; background: var(--color-violet); color: #fff; font-size: 11px; font-weight: 500; }
+.intro-scene.is-cursor .intro-cursor { opacity: 1; translate: calc(var(--fx) - 14px) calc(var(--fy) - 12px); }
+.intro-scene.is-select .intro-cursor { opacity: 1; translate: calc(var(--fx) + var(--fw) + 2px) calc(var(--fy) + var(--fh) + 2px); }
+.intro-scene.is-zoom .intro-cursor { opacity: 0; translate: calc(var(--fx) + var(--fw) + 2px) calc(var(--fy) + var(--fh) + 2px); }
+.intro-skip { position: absolute; left: 50%; bottom: 28px; translate: -50% 0; font: 12px var(--font-mono); color: #9a978f; white-space: nowrap; transition: opacity 0.3s; }
+.intro-scene.is-zoom .intro-skip { opacity: 0; }
+/* the hero headline waits under the frame, then takes over exactly where the frame's name sits */
+.op-intro .hc-center h1 { opacity: 0 !important; translate: none !important; transition: none !important; }
+.op-landed .hc-center h1 { translate: none !important; transition: none !important; }
+.op-intro:not(.op-zoom) .nav { opacity: 0; }
+.nav { transition: transform 0.5s var(--ease), color 0.4s, opacity 0.6s var(--ease); }
+.op-zoom .hc-world { animation: intro-world 2s var(--ease-io) both; }
+@keyframes intro-world { from { scale: var(--intro-zoom, 1.35); } to { scale: 1; } }
+@media (max-width: 760px) { .intro-name { white-space: normal; } .intro-label { left: 50%; translate: -50% 0; } .intro-scene { --zoom: 1.1; } :root { --intro-zoom: 1.1; } }
+
 /* ---------- hero (home) ---------- */
 .hero { position: sticky; top: 0; z-index: 0; height: 100svh; min-height: 600px; background: var(--color-stage); overflow: hidden; color: #fff; }
 
 /* ---------- live canvas hero ---------- */
 .hero.hc { --blue: #0d99ff; background-color: #edece8; background-image: radial-gradient(circle, #d2d0ca 1px, transparent 1.2px); background-size: 24px 24px; color: var(--color-ink); cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .hero.hc.grabbing { cursor: grabbing; }
-.hc-world { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s var(--ease) 0.2s; }
+.hc-world { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s var(--ease) 0.25s; }
 .ready .hc-world { opacity: 1; }
 .hc-frame { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; -webkit-user-drag: none; }
 .hc-img { position: absolute; inset: 0; overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 18px 40px -18px rgba(0,0,0,0.25); transition: box-shadow 0.25s; }
@@ -526,7 +565,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .rv { opacity: 1; transform: none; }
 }
-.seen .loader { display: none; }
 .toolgrid.four { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; }
 @media (max-width: 1000px) { .toolgrid.four { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .toolgrid.four { grid-template-columns: 1fr; } }
