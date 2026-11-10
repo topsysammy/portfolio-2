@@ -18,7 +18,8 @@ const GROUPS: { kind: Kind; title: string; text: string }[] = [
   { kind: "case", title: "Applications", text: "Mobile and web apps, from first sketch to shipped product." },
   { kind: "website", title: "Websites", text: "Landing pages and sites that sell a product by showing it." },
   { kind: "dashboard", title: "Dashboards", text: "Data-dense tools that stay calm to read." },
-  { kind: "screenshots", title: "App screenshots", text: "Store-ready screenshot sets." },
+  // App screenshots is hidden until the first set is added:
+  // { kind: "screenshots", title: "App screenshots", text: "Store-ready screenshot sets." },
   { kind: "vibecoded", title: "Just for fun", text: "Things I made because I wanted to see if I could." },
 ];
 
